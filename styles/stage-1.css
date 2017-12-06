@@ -1,0 +1,116 @@
+
+#stage-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+#stage-1.leave {
+  animation: fade-out-animation ease-out .6s forwards;
+}
+
+#stage-1 .star {
+  position: absolute;
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #FFF;
+  top: 100px;
+  left: 400px;
+  transform-origin: 100% 0;
+  animation: star-animation infinite 6s ease-out;
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, .2);
+  opacity: 0;
+  z-index: 2;
+}
+
+#stage-1 .star.inactive {
+  animation-play-state: paused;
+}
+
+#stage-1 .star:after {
+  content: '';
+  display: block;
+  top: 0px;
+  left: 4px;
+  border: 0px solid #fff;
+  border-width: 0px 90px 2px 90px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, .3);
+  transform: rotate(-45deg) translate3d(1px, 3px, 0);
+  box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
+  transform-origin: 0% 100%;
+  animation: shooting-ani infinite 3s ease-out;
+}
+
+#stage-1 .star.red {
+  top: 30px;
+  left: 395px;
+  background: #FD4659;
+  animation-delay: 5s;
+}
+
+#stage-1 .star.red:after {
+  border-color: transparent transparent transparent #FD4659;
+  animation-delay: 5s;
+}
+
+#stage-1 .star.blue {
+  top: 35px;
+  left: 432px;
+  background: #165B62;
+  animation-delay: 7s;
+}
+
+#stage-1 .star.blue:after {
+  border-color: transparent transparent transparent #165B62;
+  animation-delay: 7s;
+}
+
+#stage-1 .star.orange {
+  top: 50px;
+  left: 600px;
+  background: #FEB43B;
+  animation-delay: 5.8s;
+}
+
+#stage-1 .star.orange:after {
+  border-color: transparent transparent transparent #FEB43B;
+  animation-delay: 5.8s;
+}
+
+#stage-1 .word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 30px;
+  font-size: 36px;
+  line-height: 48px;
+  white-space: normal;
+  color: #fff;
+  font-family: 'Source-Han-Lighda7bcd57e1d34';
+  animation: fade-in-animation ease-in 1s forwards;
+}
+
+#stage-1 .word.leave {
+  animation: fade-out-animation ease-out .6s forwards;
+}
+
+@keyframes star-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(0) translate3d(-200px, 200px, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) rotate(0) translate3d(-300px, 300px, 0);
+  }
+}

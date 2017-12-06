@@ -1,0 +1,27 @@
+html, body {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #121212;
+}
+
+#stage-container {
+  position: absolute;
+  width: 561px;
+  height: 933px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #121212;
+}
